@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>Example</title>
@@ -15,18 +15,15 @@
 	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
 	<script id="scriptInit" type="text/javascript">
         $(document).ready(function () {
-            $('#dialog').wijdialog({
-                autoOpen: true,
-                captionButtons: {
-                    refresh: { visible: false }
-                }
-            });
+            $('#dialog').wijdialog({buttons: {ok: function () {
+                $(this).wijdialog('close')
+            }}});
         });
     </script>
 </head>
 <body>
 	<div id="dialog" title="Basic dialog">
-		<p>Click OK to close this window.</p>
+		<p>Meet Wijmo.</p>
 	</div>
 </body>
 </html>

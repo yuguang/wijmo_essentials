@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+    <style>
+        .plus {
+            font-size: 150%;
+        }
+    </style>
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $('#dialog').wijdialog({
+                autoOpen: true,
+                captionButtons: {
+                    pin: { visible: false },
+                    refresh: { visible: false },
+                    toggle: {visible: true, click: function () {
+                        $('#dialog').toggleClass('plus')
+                    }, iconClassOn: 'ui-icon-zoomin', iconClassOff: 'ui-icon-zoomout'},
+                    minimize: { visible: false },
+                    maximize: {visible: true, click: function () {
+                        alert('To enloarge text, click the zoom icon.')
+                    }, iconClassOn: 'ui-icon-lightbulb'},
+                    close: {visible: true, click: self.close, iconClassOn: 'ui-icon-close'}
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+	<div id="dialog" title="Basic dialog">
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>
+	</div>
+</body>
+</html>
