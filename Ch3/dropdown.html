@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $('select[name=country]').wijdropdown();
+        });
+    </script>
+</head>
+<body>
+	<select name="country" style="width:170px">
+        <optgroup label="Africa">
+            <option value="gam">Gambia</option>
+            <option value="mad">Madagascar</option>
+            <option value="nam">Namibia</option>
+        </optgroup>
+        <optgroup label="Europe">
+            <option value="fra">France</option>
+            <option value="rus">Russia</option>
+        </optgroup>
+        <optgroup label="North America">
+            <option value="can">Canada</option>
+            <option value="mex">Mexico</option>
+            <option selected="selected" value="usa">United States</option>
+        </optgroup>
+    </select>
+</body>
+</html>

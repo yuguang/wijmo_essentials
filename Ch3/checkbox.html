@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#checkbox3").wijcheckbox({checked: true});
+            $(":input[type='checkbox']:not(:checked)").wijcheckbox();
+        });
+    </script>
+    <style>
+        div {
+            display: block; margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+	<div><input type='checkbox' id='checkbox1' /><label for='checkbox1'>Unchecked</label></div>
+    <div><input type='checkbox' id='checkbox2' /><label for='checkbox2'>Hover</label></div>
+    <div><input type='checkbox' id='checkbox3' /><label for='checkbox3'>Checked</label></div>
+</body>
+</html>

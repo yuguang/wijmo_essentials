@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#phoneNumber").wijinputmask({
+                mask: '(999) 000-0000',
+                resetOnSpace: true,
+                invalidInput: function () {
+                    $("#phoneNumber").addClass('error')
+                },
+                textChanged: function () {
+                    $("#phoneNumber").removeClass('error')
+                }
+            });
+            $("#date").wijinputmask({
+                mask: '00->L<LL-0000',
+                resetOnSpace: true
+            });
+            $("button").button().click(function () {
+                $(this).siblings().find("input").wijinputmask("setText", "");
+            })
+        });
+    </script>
+    <style>
+        .error {
+            border:1px solid red;
+        }
+        .mask {
+            width: 130px;
+        }
+        .ui-button-text-only .ui-button-text {
+            padding: 3px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="mask"><input type="text" id="phoneNumber" /><button class="reset">Clear</button></div>
+    <div class="mask"><input type="text" id="date" /><button class="reset">Clear</button></div>
+</body>
+</html>

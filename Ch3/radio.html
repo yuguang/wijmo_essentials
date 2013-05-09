@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Button Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $(":input[type='radio']").wijradio();
+        });
+    </script>
+</head>
+<body>
+    <div id="radio">
+        <input type="radio" id="radio1" name="radio"/><label for="radio1">Choice 1</label>
+        <input type="radio" id="radio2" name="radio" checked="checked"/><label for="radio2">Choice 2</label>
+        <input type="radio" id="radio3" name="radio"/><label for="radio3">Choice 3</label>
+    </div>
+</body>
+</html>
