@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("#wijcarousel").wijcarousel({
+                orientation: "vertical",
+                interval: 3000,
+                loop: true,
+                auto: true,
+                showTimer: true,
+                display: 1
+            });
+        });
+    </script>
+    <style type="text/css">
+        #wijcarousel
+        {
+            width: 300px;
+            height: 200px;
+        }
+</style>
+</head>
+<body>
+	<div id="wijcarousel">
+        <ul>
+            <li><img alt="1" src="http://lorempixum.com/300/200/nature/1" title="Word1" /><span>Word Caption 1</span></li>
+            <li><img alt="2" src="http://lorempixum.com/300/200/nature/2" title="Word2" /><span>Word Caption 2</span></li>
+            <li><img alt="3" src="http://lorempixum.com/300/200/nature/3" title="Word3" /><span>Word Caption 3</span></li>
+            <li><img alt="4" src="http://lorempixum.com/300/200/nature/4" title="Word4" /><span>Word Caption 4</span></li>
+            <li><img alt="5" src="http://lorempixum.com/300/200/nature/5" title="Word5" /><span>Word Caption 5</span></li>
+            <li><img alt="6" src="http://lorempixum.com/300/200/nature/6" title="Word6" /><span>Word Caption 6</span></li>
+        </ul>
+    </div>
+</body>
+</html>
