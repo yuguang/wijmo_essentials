@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Example</title>
+    <!--jQuery References-->
+    <script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+    <!--Wijmo Widgets JavaScript-->
+    <script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+    <script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+    <!--Theme-->
+    <link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css"/>
+    <!--Wijmo Widgets CSS-->
+    <link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css"/>
+    <link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css"/>
+    <script id="scriptInit" type="text/javascript">
+        var text = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex".split(" ");
+        var postResults = [];
+        for (i = 0; i < 4; i++) {
+            postResults.push(text.splice(i * 10, 10).join(" "))
+        }
+        $(document).ready(function () {
+            $("a[data-id]").wijtooltip({
+                position: { my: 'left bottom', at: 'right top' },
+                ajaxCallback: function () {
+                    var $tooltip = this;
+                    $tooltip.wijtooltip("option", "content", postResults[parseInt($tooltip.attr("data-id"))]);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<h3>Uncertainty principle</h3>
+
+<p>
+    In <a href="#" data-id="0">quantum mechanics</a>, the <b>Heisenberg uncertainty principle</b> states by precise
+    inequalities that certain pairs of physical properties,
+    such as position and <a href="#" data-id="1">momentum</a>, cannot be simultaneously known to arbitrarily high
+    precision. That is, the more precisely one property is measured, the less
+    precisely the other can be measured.
+</p>
+
+<p>
+    Published by <a href="#" data-id="2">Werner Heisenberg</a> in 1927, the principle means that it is impossible to <i>determine</i>
+    simultaneously both the position and the
+    momentum of an electron or any other particle with any great degree of accuracy or certainty. This is not a
+    statement about researchers' ability to measure the quantities. Rather, it is a statement about the
+    system itself. That is, a system cannot be <i>defined</i> to have simultaneously singular values of these pairs of
+    quantities. The principle states that a minimum exists for the product of the uncertainties
+    in these properties that is equal to or greater than one half of the <a href="#" data-id="3">reduced Planck
+    constant</a>
+    (<i>ħ</i> = <i>h</i>/2π).
+</p>
+</body>
+</html>

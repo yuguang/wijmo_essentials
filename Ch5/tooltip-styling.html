@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Example</title>
+	<!--jQuery References-->
+	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+	<!--Wijmo Widgets JavaScript-->
+	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<!--Theme-->
+	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+	<!--Wijmo Widgets CSS-->
+	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<script id="scriptInit" type="text/javascript">
+        $(document).ready(function () {
+            $("[title]").wijtooltip({
+                modal: true
+            });
+            $("[title]").wijtooltip("option","closeBehavior","sticky");
+            $("[title]").wijtooltip ("show");
+        });
+    </script>
+    <style>
+        .wijmo-wijtooltip-container {
+            color: #ffffff;
+            background-color: slategray;
+        }
+        .wijmo-wijtooltip-pointer-inner {
+            border-right-color: slategray !important;
+        }
+        .wijmo-wijtooltip, .wijmo-wijtooltip-pointer {
+            border: 3px solid lawngreen;
+        }
+    </style>
+</head>
+<body>
+	<label id="tooltip" title="tooltip"></label>
+</body>
+</html>
