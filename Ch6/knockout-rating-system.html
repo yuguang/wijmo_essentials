@@ -41,7 +41,7 @@
     <tbody data-bind="foreach: answers">
     <tr>
         <td data-bind="text: answerText"></td>
-        <td><div data-bind="wijrating: { value: points, min: min, max: max, disabled: disabled, count: count, totalValue: totalValue, split: split }"></div></td>
+        <td><div data-bind="wijrating: { value: points, split: split }"></div></td>
     </tr>
     </tbody>
 </table>
@@ -54,17 +54,10 @@
     function Answer(text) {
         this.answerText = text;
         this.points = ko.observable(1);
-        this.val = ko.observable(3);
-        this.min = ko.observable(null);
-        this.max = ko.observable(null);
-        this.disabled = ko.observable(false);
-        this.count = ko.observable(5);
-        this.totalValue = ko.observable(5);
         this.split = ko.observable(2); // each star is split into 2 sections to allow voting by .5
     }
 
-    function SurveyViewModel(question, pointsBudget, answers) {
-        this.question = question;
+    function SurveyViewModel(pointsBudget, answers) {
         this.pointsBudget = pointsBudget;
         this.answers = $.map(answers, function (text) {
             return new Answer(text)
@@ -81,7 +74,7 @@
         }, this);
     }
 
-    ko.applyBindings(new SurveyViewModel("Which factors affect your technology choices?", 10, [
+    ko.applyBindings(new SurveyViewModel(10, [
         "Functionality, compatibility, pricing - all that boring stuff",
         "How often it is mentioned on Hacker News",
         "Number of gradients/dropshadows on project homepage",

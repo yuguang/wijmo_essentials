@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <!--jQuery References-->
+    <script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
+    <!--Wijmo Widgets JavaScript-->
+    <script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
+    <script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+    <!--Theme-->
+    <link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css"/>
+    <!--Wijmo Widgets CSS-->
+    <link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css"/>
+    <link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css"/>
+    <!--KnockoutJS for MVVM-->
+    <script src="../lib/knockout-2.2.1.js" type="text/javascript"></script>
+    <script src="../lib/knockout.wijmo.js" type="text/javascript"></script>
+</head>
+<body>
+<table id="dataGrid" data-bind="wijgrid: { data: data, allowSorting: true }">
+</table>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var viewModel = {
+        data: ko.observableArray([
+            {"subject": "Hi", "body": "Just a message", "messageType": "Gamma", "phoneNumber": "4128675309"}
+        ])
+    };
+    ko.applyBindings(viewModel);
+    var socket = io.connect('http://localhost');
+    socket.on('news', function (data) {
+        viewModel.data.push(JSON.parse(data));
+    });
+</script>
+</body>
+</html>
