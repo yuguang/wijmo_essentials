@@ -1,0 +1,3 @@
+The appview requires calendar.html, form.html, and accordion.html to be served from a local server. The easiest way is to run
+node file-server.js
+and point your browser to localhost/appview.html
