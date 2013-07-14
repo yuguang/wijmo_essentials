@@ -16,10 +16,22 @@
 	<script id="scriptInit" type="text/javascript">
         $(document).ready(function () {
             $('select[name=country]').wijdropdown();
+            $('#reset').button().click(function(){
+                $('select[name=country]').wijdropdown('destroy')
+            });
+            $('#refresh').button().click(function(){
+                $('select[name=country]').wijdropdown('refresh')
+            })
         });
     </script>
 </head>
 <body>
+    <button id="reset">
+        Reset
+    </button>
+    <button id="refresh">
+        Refresh
+    </button>
 	<select name="country" style="width:170px">
         <optgroup label="Africa">
             <option value="gam">Gambia</option>
