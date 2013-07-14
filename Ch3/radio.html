@@ -15,7 +15,13 @@
 	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
 	<script id="scriptInit" type="text/javascript">
         $(document).ready(function () {
-            $(":input[type='radio']").wijradio();
+            $(":input[type='radio']").wijradio({
+                changed: function (e, data) {
+                    if (data.checked) {
+                        alert($(this).attr('id') + ' is checked')
+                    }
+                }
+            });
         });
     </script>
 </head>
