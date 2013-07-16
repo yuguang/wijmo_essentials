@@ -6,33 +6,20 @@
 	<script src="../lib/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="../lib/jquery-ui.custom.js" type="text/javascript"></script>
 	<!--Wijmo Widgets JavaScript-->
-	<script src="../lib/jquery.wijmo-open.all.js" type="text/javascript"></script>
-	<script src="../lib/jquery.wijmo-pro.all.3.20131.2.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-open.all.3.20131.7.js" type="text/javascript"></script>
+	<script src="../lib/jquery.wijmo-pro.all.3.20131.7.js" type="text/javascript"></script>
 	<!--Theme-->
 	<link href="../lib/jquery-wijmo.css" rel="stylesheet" type="text/css" />
 	<!--Wijmo Widgets CSS-->
-	<link href="../lib/jquery.wijmo-open.css" rel="stylesheet" type="text/css" />
-	<link href="../lib/jquery.wijmo-pro.3.20131.2.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-open.3.20131.7.css" rel="stylesheet" type="text/css" />
+	<link href="../lib/jquery.wijmo-pro.3.20131.7.css" rel="stylesheet" type="text/css" />
 	<script id="scriptInit" type="text/javascript">
         $(document).ready(function () {
             $("#calendarInput").wijinputdate({showTrigger: true});
-            $(".wijmo-wijinput-trigger").removeClass("wijmo-wijinput-trigger");
             $spinnerInput = $("#spinnerInput");
             $spinnerInput.wijinputdate({showSpinner: true, dateFormat: 'g', activeField: 3});
-            $(".wijmo-wijinput-spinner").css({
-                top: $spinnerInput.offset().top - 6,
-                left: $spinnerInput.parent().outerWidth() + 8
-            });
         });
     </script>
-    <style>
-        .date {
-            width: 200px;
-        }
-        .wijmo-wijinput-spinup, .wijmo-wijinput-spindown {
-            height: 5%;
-        }
-    </style>
 </head>
 <body>
     <div class="date"><input type="text" id="calendarInput" /></div>
